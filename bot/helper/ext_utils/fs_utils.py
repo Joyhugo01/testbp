@@ -7,9 +7,7 @@ import mimetypes
 
 
 def clean_download(path: str):
-    if os.path.exists(path):
-        LOGGER.info(f"Cleaning download: {path}")
-        shutil.rmtree(path)
+    pass
 
 
 def start_cleanup():
@@ -20,15 +18,7 @@ def start_cleanup():
 
 
 def exit_clean_up(signal, frame):
-    try:
-        LOGGER.info("Please wait, while we clean up the downloads and stop running downloads")
-        aria2.remove_all(True)
-        shutil.rmtree(DOWNLOAD_DIR)
-        sys.exit(0)
-    except KeyboardInterrupt:
-        LOGGER.warning("Force Exiting before the cleanup finishes!")
-        sys.exit(1)
-
+    pass
 
 def tar(orig_path: str):
     path = pathlib.PurePath(orig_path)
